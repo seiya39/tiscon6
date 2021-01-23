@@ -5,6 +5,7 @@ import com.tiscon.validator.Numeric;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * 顧客が入力する見積もり情報を保持するクラス。
@@ -17,17 +18,20 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank
-    @Numeric
+    @Pattern(regexp = "0[89]0-?[0-9]{4}-?[0-9]{4}",message = "電話番号を正しく入力してください")
     private String tel;
 
     @Email
     @NotBlank
+    @Pattern(regexp = "^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\\.)+[a-zA-Z]{2,}$",message = "メールアドレスを正しく入力してください")
     private String email;
 
     @NotBlank
     private String oldPrefectureId;
 
+
     @NotBlank
+    //@Pattern(regexp = "^((北海道|東京都|(大阪|京都)府|(神奈川|和歌山|鹿児島)県|[^\\s\\w\\d　]{2}県)[^\\s\\w\\d　]{1,6}[市郡区町村][^\\s\\w\\d　]{1,20}[\\d０-９〇一-九十上下東西]+[^\\s　'”<）」】]*)|^((北海道|東京都|(大阪|京都)府|(神奈川|和歌山|鹿児島)県|[^\\s\\w\\d　]{2}県)[^\\s\\w\\d　]{1,6}[市郡区町村][^\\s\\w\\d　]{1,20})")
     private String oldAddress;
 
     @NotBlank
@@ -38,18 +42,22 @@ public class UserOrderForm {
 
     @Numeric
     @NotBlank
+    @Pattern(regexp = "[1-9]?[0-9]",message = "段ボールの個数を100個未満で入力してください")
     private String box;
 
     @Numeric
     @NotBlank
+    @Pattern(regexp = "[0-10]",message = "ベッドの個数を10個以下で入力してください")
     private String bed;
 
     @Numeric
     @NotBlank
+    @Pattern(regexp = "[0-10]",message = "自転車の個数を10個以下で入力してください")
     private String bicycle;
 
     @Numeric
     @NotBlank
+    @Pattern(regexp = "[0-10]",message = "洗濯機の個数を10個以下で入力してください")
     private String washingMachine;
 
     @NotNull
