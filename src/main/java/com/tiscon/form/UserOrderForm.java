@@ -60,6 +60,10 @@ public class UserOrderForm {
     @Pattern(regexp = "[0-10]",message = "洗濯機の個数を10個以下で入力してください")
     private String washingMachine;
 
+    @Numeric
+    @NotBlank
+    private String seasonNumber;
+
     @NotNull
     private boolean washingMachineInstallation;
 
@@ -151,11 +155,20 @@ public class UserOrderForm {
         this.washingMachine = washingMachine;
     }
 
+    public String getSeasonNumber() {
+        return seasonNumber;
+    }
+
+    public void setSeasonNumber(String seasonNumber) {
+        this.seasonNumber = seasonNumber;
+    }
+
     public boolean getWashingMachineInstallation() {
         return washingMachineInstallation;
     }
 
     public void setWashingMachineInstallation(boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+
     }
 }
