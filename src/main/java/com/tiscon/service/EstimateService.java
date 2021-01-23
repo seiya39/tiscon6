@@ -71,13 +71,6 @@ public class EstimateService {
      */
     public Integer getPrice(UserOrderDto dto) {
         double distance = estimateDAO.getDistance(dto.getOldPrefectureId(), dto.getNewPrefectureId());
-
-        int month = 3;
-        //季節係数を求めるメソッド
-        double N= getSeasonNumber(month) ;
-
-
-
         // 小数点以下を切り捨てる
         int distanceInt = (int) Math.floor(distance);
 
@@ -99,7 +92,7 @@ public class EstimateService {
             priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
 
-        return (int) ((priceForDistance + pricePerTruck)*N) + priceForOptionalService;
+        return priceForDistance + pricePerTruck + priceForOptionalService;
     }
 
     /**
@@ -111,10 +104,5 @@ public class EstimateService {
      */
     private int getBoxForPackage(int packageNum, PackageType type) {
         return packageNum * estimateDAO.getBoxPerPackage(type.getCode());
-    }
-    private double getSeasonNumber(int month) {
-        if(month==3 || month==4){ return 1.5; }
-        else if(month == 9){ return 1.2; }
-        else{return 1; }
     }
 }
