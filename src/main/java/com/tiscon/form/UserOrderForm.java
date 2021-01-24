@@ -18,7 +18,7 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank
-    @Pattern(regexp = "0[89]0-?[0-9]{4}-?[0-9]{4}",message = "電話番号を正しく入力してください")
+    @Pattern(regexp = "0[89]0-?[0-9]{4}-?[0-9]{4}",message = "半角数字で正しく入力してください")
     private String tel;
 
     @Email
@@ -47,17 +47,17 @@ public class UserOrderForm {
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "ベッドの個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "ベッドの個数を10個未満で入力してください")
     private String bed;
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "自転車の個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "自転車の個数を9個未満で入力してください")
     private String bicycle;
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "洗濯機の個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "洗濯機の個数を9個未満で入力してください")
     private String washingMachine;
 
     @Numeric
