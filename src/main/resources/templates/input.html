@@ -70,7 +70,8 @@
         <legend>荷物情報</legend>
         <div class="form-group">
           <label for="box">段ボールの個数</label>
-          <select id="box" name="box" class="form-control" th:field="*{box}"required>
+            <br>
+          <select id="box" name="box" class="form-control1" th:field="*{box}"required>
               <option value="">-</option>
               <option value="0">0</option>
               <option value="1">1</option>
@@ -176,7 +177,8 @@
         </div>
         <div class="form-group">
           <label for="bed">ベッドの個数</label>
-            <select id="bed" name="bed" class="form-control" th:field="*{bed}"required>
+            <br>
+            <select id="bed" name="bed" class="form-control1" th:field="*{bed}"required>
                 <option value="">-</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -193,7 +195,8 @@
         </div>
         <div class="form-group">
           <label for="bicycle">自転車の個数</label>
-            <select id="bicycle" name="bicycle" class="form-control" th:field="*{bicycle}"required>
+            <br>
+            <select id="bicycle" name="bicycle" class="form-control1" th:field="*{bicycle}"required>
                 <option value="">-</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -210,7 +213,8 @@
         </div>
         <div class="form-group">
           <label for="washingMachine">洗濯機の個数</label>
-            <select id="washingMachine" name="washingMachine" class="form-control" th:field="*{washingMachine}"required>
+            <br>
+            <select id="washingMachine" name="washingMachine" class="form-control1" th:field="*{washingMachine}"required>
                 <option value="">-</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -227,15 +231,15 @@
         </div>
         <div class="form-group">
           <label for="washingMachineInstallation">洗濯機の設置工事申し込み</label>
-          <select id="washingMachineInstallation" name="washingMachineInstallation" class="form-control" th:field="*{washingMachineInstallation}"required>
+            <br>
+          <select id="washingMachineInstallation" name="washingMachineInstallation" class="form-control1" th:field="*{washingMachineInstallation}"required>
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
           </select>
         </div>
         <legend>引っ越し予定の月</legend>
         <div class="form-group">
-          <label for="seasonNumber">月を選択</label>
-          <select id="seasonNumber" name="seasonNumber" class="form-control" th:field="*{seasonNumber}"required>
+          <select id="seasonNumber" name="seasonNumber" class="form-control1" th:field="*{seasonNumber}"required>
               <option value="">-</option>
               <option value="1">1</option>
               <option value="2">2</option>
