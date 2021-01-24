@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-          <p>郵便番号 ※半角7桁で入力してください</p>
+          <p>転居元郵便番号 ※半角7桁で入力してください</p>
           <input type="text" name="zip01" size="10" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','oldPrefectureId','oldAddress');">
           </div>
         <div class="form-group">
@@ -50,9 +50,13 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="oldAddress">市町村</label>
+          <label for="oldAddress">転居元住所（市区町村以下）</label>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                  class="form-control" value="新宿区西新宿1-1-1"/>
+        </div>
+        <div class="form-group">
+          <p>転居先郵便番号 ※半角7桁で入力してください</p>
+          <input type="text" name="zip02" size="10" class="form-control" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','newPrefectureId','newAddress');">
         </div>
         <div class="form-group">
           <label for="newPrefectureId">転居先住所（都道府県）</label>
