@@ -15,6 +15,7 @@ import javax.validation.constraints.Pattern;
 public class UserOrderForm {
 
     @NotBlank
+    @Pattern(regexp = "^[ァ-ンヴー]*$",message = "氏名は全角カナで入力してください")
     private String customerName;
 
     @NotBlank
@@ -47,17 +48,17 @@ public class UserOrderForm {
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "ベッドの個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "ベッドの個数を10個未満で入力してください")
     private String bed;
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "自転車の個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "自転車の個数を10個未満で入力してください")
     private String bicycle;
 
     @Numeric
     @NotBlank
-    @Pattern(regexp = "[0-10]",message = "洗濯機の個数を10個以下で入力してください")
+    @Pattern(regexp = "[0-9]",message = "洗濯機の個数を10個未満で入力してください")
     private String washingMachine;
 
     @Numeric
