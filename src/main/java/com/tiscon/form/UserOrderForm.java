@@ -19,7 +19,7 @@ public class UserOrderForm {
     private String customerName;
 
     @NotBlank
-    @Pattern(regexp = "0[89]0-?[0-9]{4}-?[0-9]{4}",message = "半角数字で正しく入力してください")
+    @Pattern(regexp = "0[789]0-?[0-9]{4}-?[0-9]{4}",message = "半角数字で正しく入力してください")
     private String tel;
 
     @Email
@@ -28,8 +28,15 @@ public class UserOrderForm {
     private String email;
 
     @NotBlank
-    private String oldPrefectureId;
+    @Pattern(regexp = "[0-9]{7}",message = "半角数字7桁で正しく入力してください")
+    private String zip01;
 
+    @NotBlank
+    @Pattern(regexp = "[0-9]{7}",message = "半角数字7桁で正しく入力してください")
+    private String zip02;
+
+    @NotBlank
+    private String oldPrefectureId;
 
     @NotBlank
     //@Pattern(regexp = "^((北海道|東京都|(大阪|京都)府|(神奈川|和歌山|鹿児島)県|[^\\s\\w\\d　]{2}県)[^\\s\\w\\d　]{1,6}[市郡区町村][^\\s\\w\\d　]{1,20}[\\d０-９〇一-九十上下東西]+[^\\s　'”<）」】]*)|^((北海道|東京都|(大阪|京都)府|(神奈川|和歌山|鹿児島)県|[^\\s\\w\\d　]{2}県)[^\\s\\w\\d　]{1,6}[市郡区町村][^\\s\\w\\d　]{1,20})")
@@ -90,6 +97,22 @@ public class UserOrderForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getZip01() {
+        return zip01;
+    }
+
+    public void setZip01(String zip01) {
+        this.zip01 = zip01;
+    }
+
+    public String getZip02() {
+        return zip02;
+    }
+
+    public void setZip02(String zip02) {
+        this.zip02 = zip02;
     }
 
     public String getOldPrefectureId() {
